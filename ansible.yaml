@@ -14,7 +14,7 @@
       mode: 0666
 
   - name: Apply the manifest
-    ansible.builtin.cmd:
-      cmd: kubectl apply -f ds.yml
+    ansible.builtin.command:
+      cmd: kubectl apply -f ~/ds.yml
     environment:
       PATH: /usr/local/bin:/usr/bin:/bin 
