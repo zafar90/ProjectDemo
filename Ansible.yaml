@@ -1,0 +1,20 @@
+---
+- name: Playbook to deploy the k8s manifest
+  hosts: servers
+  become_user: ubuntu
+
+  tasks:
+
+  - name: Copy the manifest to K8s host
+    ansible.builtin.copy:
+      src: ds.yml
+      dest: /home/ubuntu/ds.yml
+      owner: ubuntu
+      group: ubuntu
+      mode: 0666
+
+  - name: Apply the manifest
+    ansible.builtin.cmd:
+      cmd: kubectl apply -f ds.yml
+    environment:
+      PATH: /usr/local/bin:/usr/bin:/bin 
