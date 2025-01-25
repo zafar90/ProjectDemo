@@ -10,7 +10,7 @@ public class BankappApplication {
 		SpringApplication.run(BankappApplication.class, args);
 
 		 String nullString = null; 
-		 System.out.println('nullString.length()');
+		 System.out.println(nullString.length());
 
 		 String password = "abcd";
 		 System.out.println("Password" + password); 
